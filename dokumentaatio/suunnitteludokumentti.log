@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.31)  18 JAN 2012 16:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.31)  22 JAN 2012 12:43
 entering extended mode
  %&-line parsing enabled.
 **suunnitteludokumentti.tex
@@ -436,17 +436,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 Here is how much of TeX's memory you used:
  2290 strings out of 495046
  26878 string characters out of 1181965
- 87840 words of memory out of 3000000
+ 88840 words of memory out of 3000000
  5315 multiletter control sequences out of 15000+50000
  6544 words of font info for 26 fonts, out of 3000000 for 9000
  189 hyphenation exceptions out of 8191
- 34i,4n,31p,493b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,4n,31p,508b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
 csc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
 xmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on suunnitteludokumentti.pdf (1 page, 62527 bytes).
+Output written on suunnitteludokumentti.pdf (1 page, 62926 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
