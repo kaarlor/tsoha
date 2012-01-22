@@ -1,0 +1,46 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage[top=3cm, left=3cm, bottom=3cm, right=3cm]{geometry}
+
+\title{Suunnitteludokumentti: Olutpäiväkirja}
+\author{Kaarlo Reipas}
+
+\begin{document}
+\maketitle
+
+\sloppy
+
+\section{Johdanto}
+\label{sec:johdanto}
+
+\subsection{Järjestelmän tarkoitus}
+
+Olutpäiväkirja on olutharrastajan apuvälineeksi tarkoitettu tietokantasovellus, johon käyttäjä voi tallentaa tietoja maistamistaan oluista. Oluista voidaan tallentaa ainakin oluen nimi, oluen pannut panimo, oluttyyli sekä käyttäjän muistiinpanoja oluen mausta ja maistelutilaisuudesta. Käyttäjiä voi olla useita, ja jokaisella on oma päiväkirjansa. Tietokannasta voi myös etsiä oluiden tietoja nimen, panimon tai tyylin perusteella.
+
+\subsection{Toimintaympäristö}
+
+Olutpäiväkirja tulee verkkokäyttöön, näkyy käyttäjälle verkkosivuston muodossa ja käyttää Oracle- tai Postgres-tietokantaa.
+
+\subsection{Toteutusympäristö}
+
+Olutpäiväkirja toteutetaan php-kielellä ja tietokantahaut SQL-kyselyin.
+
+\section{Yleiskuvaus järjestelmästä}
+
+\subsection{Sidosryhmäkaavio}
+
+\subsection{Käyttäjäryhmät}
+
+Olutpäiväkirjalla on yhden tyyppisiä käyttäjiä.
+
+\section{Käyttötapaukset}
+
+\begin{description}
+\item[Käyttäjäksi rekisteröityminen] Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Käyttäjä valitsee itselleen käyttäjätunnuksen ja salasanan, joilla hän pääsee kirjautumaan ja täten käyttämään olutpäiväkirjan toiminnallisuuksia.
+
+\item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
+\end{description}
+
+\end{document}

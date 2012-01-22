@@ -1,0 +1,11 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+
+\title{Suunnitteludokumentti: Olutpäiväkirja}
+\author{Kaarlo Reipas}
+
+\begin{document}
+\maketitle
+\end{document}
