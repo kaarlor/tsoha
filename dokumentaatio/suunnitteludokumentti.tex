@@ -33,16 +33,23 @@ Olutpäiväkirja toteutetaan php-kielellä ja tietokantahaut SQL-kyselyin.
 
 \subsection{Käyttäjäryhmät}
 
-Olutpäiväkirjalla on yhden tyyppisiä käyttäjiä.
+Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi.
 
 \section{Käyttötapaukset}
 
 \begin{description}
 \item[Käyttäjäksi rekisteröityminen] Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Käyttäjä valitsee itselleen käyttäjätunnuksen ja salasanan, joilla hän pääsee kirjautumaan ja täten käyttämään olutpäiväkirjan toiminnallisuuksia.
 
-\item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
+\item[Panimon lisääminen] Kirjautunut käyttäjä voi lisätä tietokantaansa uuden panimon antamalla panimon nimen. Panimolle voi myös kirjata maan.
+
+\item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Panimon voi valita vetovalikosta, tai valita vaihtoehdon ''uusi panimo''. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
 
 \item[Oluiden selaaminen ja etsiminen] Kirjautunut käyttäjä voi selata tallentamiaan oluita ja hakea olutlistauksen esimerkiksi nimen tai panimon perusteella.
+
+\item[Panimon muokkaaminen] Kirjautunut käyttäjä voi muokata panimon tietoja.
+
+\item[Oluen muokkaaminen] Kirjautunut käyttäjä voi muokata kirjaamansa oluen tietoja.
+
 \end{description}
 
 \end{document}
