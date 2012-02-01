@@ -1,0 +1,7 @@
+<?php
+$connection_host='';
+$connection_dbname='';
+$connection_user='';
+$connection_password='';
+$connection = pg_connect('host='.$connection_host.' dbname='.$connection_dbname.' user='.$connection_user.' password='.$connection_password);
+?>
