@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.31)  23 JAN 2012 19:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.31)  4 FEB 2012 18:49
 entering extended mode
  %&-line parsing enabled.
 **suunnitteludokumentti.tex
@@ -360,27 +360,56 @@ Package ifvtex Info: VTeX not detected.
 \Gm@dimlist=\toks28
 
 (/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count103
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count104
+\float@exts=\toks29
+\float@box=\box29
+\@float@everytoks=\toks30
+\@floatcapt=\box30
+)
 (./suunnitteludokumentti.aux)
 \openout1 = `suunnitteludokumentti.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -426,29 +455,55 @@ driver: pdftex
 \@twosidetrue \@mparswitchtrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen121
+\scratchbox=\box31
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen122
+\MPnumerator=\count109
+\everyMPtoPDFconversion=\toks32
+)
+File: img/sidosryhmakaavio.eps Graphic file (type mps)
+ [MP to PDF] (./img/sidosryhmakaavio.eps)
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+[]\OT1/cmr/m/n/12 Rekister[]oitym[]at[]on k[]aytt[]aj[]a voi re-kis-ter[]oity[]
+a
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-[]\OT1/cmr/m/n/12 Kuka ta-han-sa voi re-kis-ter[]oity[]a
+
+Underfull \hbox (badness 2512) in paragraph at lines 49--50
+\OT1/cmr/m/n/12 olutp[]aiv[]akirjan k[]aytt[]aj[]aksi luo-mal-la it-sel-leen k[
+]aytt[]aj[]atilin. K[]aytt[]aj[]a va-
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./suunnitteludokumentti.aux) ) 
+File: img/tietokantakaavio.eps Graphic file (type mps)
+ [MP to PDF]
+(./img/tietokantakaavio.eps) [2] (./suunnitteludokumentti.aux) ) 
 Here is how much of TeX's memory you used:
- 2290 strings out of 495046
- 26878 string characters out of 1181965
- 89840 words of memory out of 3000000
- 5315 multiletter control sequences out of 15000+50000
- 6544 words of font info for 26 fonts, out of 3000000 for 9000
+ 3055 strings out of 495046
+ 36473 string characters out of 1181965
+ 99302 words of memory out of 3000000
+ 6045 multiletter control sequences out of 15000+50000
+ 9047 words of font info for 29 fonts, out of 3000000 for 9000
  189 hyphenation exceptions out of 8191
- 34i,4n,31p,508b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-csc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on suunnitteludokumentti.pdf (1 page, 63327 bytes).
+ 34i,7n,31p,478b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/tex
+mf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/font
+s/type1/urw/times/utmr8a.pfb>
+Output written on suunnitteludokumentti.pdf (2 pages, 94961 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 <?php
-setcookie('username','',time()+10);
-setcookie('password','',time()+10);
+setcookie('username','',time());
+setcookie('password','',time());
 header('Location: index.php');
 exit;
 ?>

@@ -1,8 +1,6 @@
 <html>
  
-  <head>
-    <title>Olutp&auml;iv&auml;kirja</title>
-  </head>
+<?php include('static_elements/head.php'); ?>
   
   <body>
     Uusi k&auml;ytt&auml;j&auml; luotiin onnistuneesti.<br>

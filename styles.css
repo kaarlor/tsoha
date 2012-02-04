@@ -1,3 +1,17 @@
 td{
     vertical-align: top;
 }
+
+div.error{
+    text-weight: bold;
+    color: #FF0000;
+}
+
+div.message{
+    text-weight: bold;
+    color: #00DD00;
+}
+
+table.tasting_table{
+    max-width: 100%;
+}

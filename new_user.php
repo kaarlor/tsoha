@@ -1,20 +1,22 @@
 <?php
 
+$error = '';
+
 if ($_POST['newuser']){
    require('db/connection.php');
    if ($_POST['password'] != $_POST['password2']){
-      echo('Virhe: Antamasi salasanat eiv&auml;t t&auml;sm&auml;&auml;.');
+     $error = 'Virhe: Antamasi salasanat eiv&auml;t t&auml;sm&auml;&auml;.';
    } else if ($_POST['password'] == '' || $_POST['username'] == '') {
-     echo('Virhe: Et antanut kaikkia tietoja.');
+     $error = 'Virhe: Et antanut kaikkia tietoja.';
    } else {
-     $result = pg_query($connection, 'SELECT * FROM users WHERE username=\''.addslashes($_POST['username']).'\'');
+     $result = pg_query($connection, 'SELECT * FROM users WHERE username=\''.pg_escape_string($_POST['username']).'\'');
      if (pg_fetch_row($result)){
-          echo('Virhe: K&auml;ytt&auml;j&auml;nimi on jo k&auml;yt&ouml;ss&auml;.');
+          $error = 'Virhe: K&auml;ytt&auml;j&auml;nimi on jo k&auml;yt&ouml;ss&auml;.';
      } else {
        $result = pg_query($connection,
-     	     'INSERT INTO users (username, password) VALUES (\''.addslashes($_POST['username']).'\', \''.addslashes(md5($_POST['password'])).'\')');
+     	     'INSERT INTO users (username, password) VALUES (\''.pg_escape_string($_POST['username']).'\', \''.pg_escape_string(md5($_POST['password'])).'\')');
        if (!$result) {
-         echo('Virhe k&auml;ytt&auml;j&auml;&auml; luodessa.');
+         $error = 'Virhe k&auml;ytt&auml;j&auml;&auml; luodessa.';
        } else {
          header('Location: new_user_done.php');
 	 exit;
@@ -27,11 +29,12 @@ if ($_POST['newuser']){
 
 <html>
  
-  <head>
-    <title>Olutp&auml;iv&auml;kirja</title>
-  </head>
+<?php include('static_elements/head.php'); ?>
   
   <body>
+
+<?php if ($error) echo('<div class="error">'.$error.'</div>'); ?>
+
     <h1>Uusi k&auml;ytt&auml;j&auml;</h1>
     <form method="POST" action="new_user.php">
       <input type="hidden" name="newuser" value="true">	

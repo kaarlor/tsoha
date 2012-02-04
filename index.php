@@ -1,12 +1,32 @@
+<?php
+
+if ($_POST['trylogin'] && $_POST['username'] && $_POST['password']){
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+  setcookie('username',$username,time()+3600);
+  setcookie('password',$password,time()+3600);
+  header('Location: user_home.php');
+  exit;
+}
+if (!$_POST['trylogin']){
+  setcookie('username','',time());
+  setcookie('password','',time());
+}
+
+?>
+
 <html>
  
-  <head>
-    <title>Olutp&auml;iv&auml;kirja</title>
-  </head>
+<?php include('static_elements/head.php'); ?>
   
   <body>
     <h1>Olutp&auml;iv&auml;kirja</h1>
-    <form method="POST" action="user_home.php">
+<?php
+if ($_POST['trylogin']){
+   echo('<div class="error">Virhe: Käyttäjänimi ja salasana eivät täsmää.</div>');
+}
+?>
+    <form method="POST" action="index.php">
       <table>
 	<tr>
 	  <td>K&auml;ytt&auml;j&auml;nimi</td><td><input name="username" type="textbox"></td>

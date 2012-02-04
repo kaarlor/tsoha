@@ -3,6 +3,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[finnish]{babel}
 \usepackage[top=3cm, left=3cm, bottom=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\DeclareGraphicsRule{*}{mps}{*}{}
 
 \title{Suunnitteludokumentti: Olutpäiväkirja}
 \author{Kaarlo Reipas}
@@ -17,7 +20,7 @@
 
 \subsection{Järjestelmän tarkoitus}
 
-Olutpäiväkirja on olutharrastajan apuvälineeksi tarkoitettu tietokantasovellus, johon käyttäjä voi tallentaa tietoja maistamistaan oluista. Oluista voidaan tallentaa ainakin oluen nimi, oluen pannut panimo, oluttyyli sekä käyttäjän muistiinpanoja oluen mausta ja maistelutilaisuudesta. Käyttäjiä voi olla useita, ja jokaisella on oma päiväkirjansa. Tietokannasta voi myös etsiä tallentamiensa oluiden tietoja nimen, panimon tai tyylin perusteella.
+Olutpäiväkirja on olutharrastajan apuvälineeksi tarkoitettu tietokantasovellus, johon käyttäjä voi tallentaa tietoja maistamistaan oluista. Oluista voidaan tallentaa ainakin oluen nimi, oluen pannut panimo, oluttyyli sekä käyttäjän muistiinpanoja oluesta. Käyttäjiä voi olla useita, ja jokaisella on oma päiväkirjansa. Tietokannasta voi myös etsiä tallentamiensa oluiden tietoja nimen, panimon tai tyylin perusteella.
 
 \subsection{Toimintaympäristö}
 
@@ -30,26 +33,31 @@ Olutpäiväkirja toteutetaan php-kielellä ja tietokantahaut SQL-kyselyin.
 \section{Yleiskuvaus järjestelmästä}
 
 \subsection{Sidosryhmäkaavio}
+\ 
+\begin{figure}[H]
+  \centering
+  \includegraphics{img/sidosryhmakaavio.eps}
+\end{figure}
 
 \subsection{Käyttäjäryhmät}
 
-Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi.
+Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Henkilöä, jolla ei ole olutpäiväkirjan käyttäjätiliä, sanotaan \emph{rekisteröitymättömäksi käyttäjäksi}. Henkilö, jolla on käyttäjätili, on \emph{rekisteröitynyt käyttäjä}.
 
 \section{Käyttötapaukset}
 
 \begin{description}
-\item[Käyttäjäksi rekisteröityminen] Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Käyttäjä valitsee itselleen käyttäjätunnuksen ja salasanan, joilla hän pääsee kirjautumaan ja täten käyttämään olutpäiväkirjan toiminnallisuuksia.
+\item[Käyttäjätilin luonti] Rekisteröitymätön käyttäjä voi rekisteröityä olutpäiväkirjan käyttäjäksi luomalla itselleen käyttäjätilin. Käyttäjä valitsee itselleen käyttäjätunnuksen ja salasanan, joilla hän pääsee kirjautumaan ja täten käyttämään olutpäiväkirjan toiminnallisuuksia.
 
-\item[Panimon lisääminen] Kirjautunut käyttäjä voi lisätä tietokantaansa uuden panimon antamalla panimon nimen. Panimolle voi myös kirjata maan.
+\item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Panimon voi valita vetovalikosta, tai valita vaihtoehdon ''uusi panimo'' ja antaa uuden panimon nimen. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
 
-\item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Panimon voi valita vetovalikosta, tai valita vaihtoehdon ''uusi panimo''. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
-
-\item[Oluiden selaaminen ja etsiminen] Kirjautunut käyttäjä voi selata tallentamiaan oluita ja hakea olutlistauksen esimerkiksi nimen tai panimon perusteella.
-
-\item[Panimon muokkaaminen] Kirjautunut käyttäjä voi muokata panimon tietoja.
-
-\item[Oluen muokkaaminen] Kirjautunut käyttäjä voi muokata kirjaamansa oluen tietoja.
+\item[Oluiden selaaminen] Kirjautunut käyttäjä voi selata tallentamiaan oluita ja järjestää olutlistauksen esimerkiksi nimen tai panimon perusteella.
 
 \end{description}
 
+\section{Tietokantakaavio}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{img/tietokantakaavio.eps}
+\end{figure}
 \end{document}
