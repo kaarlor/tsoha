@@ -9,12 +9,12 @@ if ($_POST['newuser']){
    } else if ($_POST['password'] == '' || $_POST['username'] == '') {
      $error = 'Virhe: Et antanut kaikkia tietoja.';
    } else {
-     $result = pg_query($connection, 'SELECT * FROM users WHERE username=\''.pg_escape_string($_POST['username']).'\'');
+     $result = pg_query($connection, 'SELECT * FROM users WHERE username=\''.pg_escape_string(trim($_POST['username'])).'\'');
      if (pg_fetch_row($result)){
           $error = 'Virhe: K&auml;ytt&auml;j&auml;nimi on jo k&auml;yt&ouml;ss&auml;.';
      } else {
        $result = pg_query($connection,
-     	     'INSERT INTO users (username, password) VALUES (\''.pg_escape_string($_POST['username']).'\', \''.pg_escape_string(md5($_POST['password'])).'\')');
+     	     'INSERT INTO users (username, password, admin) VALUES (\''.pg_escape_string(trim($_POST['username'])).'\', \''.pg_escape_string(md5($_POST['password'])).'\', FALSE)');
        if (!$result) {
          $error = 'Virhe k&auml;ytt&auml;j&auml;&auml; luodessa.';
        } else {
