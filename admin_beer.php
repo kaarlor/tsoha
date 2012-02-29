@@ -24,6 +24,7 @@ if ($_POST['modify_beer']){
 
   pg_query($connection, 'UPDATE beers SET name = \''.pg_escape_string(trim($_POST['beer_name'])).'\', brewery = '.$query_brewery.',
                          style = '.$query_style.' WHERE id = \''.pg_escape_string($beer_id).'\'');
+  $message = 'Muutokset suoritettiin onnistuneesti.';
 }
 
 $row = pg_fetch_row(pg_query($connection, 'SELECT id, name, brewery, style FROM beers WHERE id = \''.pg_escape_string($beer_id).'\''));

@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage[top=3cm, left=3cm, bottom=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\title{Toteutusdokumentti: Olutpäiväkirja}
+\author{Kaarlo Reipas}
+
+\begin{document}
+\maketitle
+
+\sloppy
+
+\section{Johdanto}
+\label{sec:johdanto}
+
+\subsection{Järjestelmän tarkoitus}
+
+Olutpäiväkirja on olutharrastajan apuvälineeksi tarkoitettu tietokantasovellus, johon käyttäjä voi tallentaa tietoja maistamistaan oluista. Oluista voidaan tallentaa ainakin oluen nimi, oluen pannut panimo, oluttyyli sekä käyttäjän muistiinpanoja oluesta. Käyttäjiä voi olla useita, ja jokaisella on oma päiväkirjansa. Päiväkirjaa voi myös selata, ja oluita voi järjestää esimerkiksi nimen, panimon tai oluttyylin perusteella.
+
+\subsection{Toimintaympäristö}
+
+Olutpäiväkirja tulee verkkokäyttöön, näkyy käyttäjälle verkkosivuston muodossa ja käyttää PostgreSQL-tietokantaa.
+
+\subsection{Toteutusympäristö}
+
+Olutpäiväkirja on html-muotoinen verkkosivu, jonka toiminnallisuudet on toteutettu php-kielellä ja tietokantahaut SQL-kyselyin.
+
+\section{Ohjelmiston yleisrakenne}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{img/rakennekaavio.eps}
+\end{figure}
+
+\section{Ohjelmiston pääkomponentit}
+
+\begin{description}
+\item[Aloitussivu (index.php)] Aloitussivu on sivu, jolla käyttäjä saapuu aluksi. Aloitussivulla on kentät, joihin käyttäjä voi syöttää käyttäjänimensä ja salasanansa ja lähettämään nämä serverille. Tällöin index.php käsittelee kirjautumistiedot, ja mikäli ne ovat oikein, ohjaa käyttäjän käyttäjäsivulle (user\_home.php). Aloitussivulla on myös linkki rekisteröitymissivulle (new\_user.php).
+
+\item[Rekisteröitymissivu (new\_user.php)] Rekisteröitymissivulla on kentät, joihin järjestelmään kirjautumaton käyttäjä voi syöttää halutun käyttäjänimen ja uuden salasanan. Kun käyttäjä lähettää nämä, rekisteröitymissivu käsittelee käyttäjän syöttämät tiedot, varmistaa, ettei kenttiä ole jätetty tyhjiksi, ja että haluttu käyttäjänimi ei ole ennestään käytössä. Tämän jälkeen rekisteröitymissivu joko lisää uuden käyttäjätilin ja ohjaa käyttäjän aloitussivulle, tai esittää asianmukaisen virheilmoituksen.
+
+\item[Käyttäjäsivu (user\_home.php)] Käyttäjäsivu on järjestelmään kirjautuneen käyttäjän oma sivu, joka generoidaan kirjautuneen käyttäjän tietojen perusteella. Mikäli kirjautumaton käyttäjä yrittää siirtyä käyttäjäsivulle, ohjataan hänet aloitussivulle. Käyttäjäsivulla näkyy lista käyttäjän lisäämistä oluista ja lomake, jolla käyttäjä voi lisätä uusia oluita listaansa. Kun käyttäjä syöttää uuden oluen tiedot, lähettää selain oluen tiedot takaisin käyttäjäsivulle, joka käsittelee nämä tiedot ja lisää oluen käyttäjän maistelulistaan.
+
+Käyttäjäsivulta on linkki aloitussivulle. Mikäli käyttäjällä on hallintaoikeus, näkyy käyttäjäsivulla myös linkki hallintasivulle.
+
+\item[Hallintasivu (admin\_home.php)] Hallintasivu aukeaa vain kirjautuneelle käyttäjälle, jolle on kirjattu hallintaoikeudet. Muut ohjataan hallintasivulta takaisin aloitussivulle. Hallintasivulla käyttäjä näkee kaikki järjestelmään lisätyt oluet ja voi muuttaa niiden tietoja erillisellä muokkaussivulla sekä poistaa niitä. Käyttäjä näkyy myös kaikki järjestelmän panimot ja voi poistaa panimon, jos panimolla ei ole järjestelmässä oluita. Uuden panimon voi myös lisätä.
+
+Hallintasivulta on linkki takaisin käyttäjäsivulle.
+\end{description}
+
+\section{Asennustiedot}
+
+Järjestelmän tiedostoista db/ -kansiossa sijaitsevat tietokantayhteyden ottamiseen tarkoitetut php-tiedostot ja static\_elements/ -kansiossa sijaitsee head.php -tiedosto, joka rakentaa kaikille sivuille yhteisen html head -osion. Muut tiedostot sijaitsevat juurihakemistossa.
+
+\end{document}

@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+\documentclass[12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[finnish]{babel}
@@ -41,7 +41,7 @@ Olutpäiväkirja toteutetaan php-kielellä ja tietokantahaut SQL-kyselyin.
 
 \subsection{Käyttäjäryhmät}
 
-Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Henkilöä, jolla ei ole olutpäiväkirjan käyttäjätiliä, sanotaan \emph{rekisteröitymättömäksi käyttäjäksi}. Henkilö, jolla on käyttäjätili, on \emph{rekisteröitynyt käyttäjä}.
+Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Henkilöä, jolla ei ole olutpäiväkirjan käyttäjätiliä, sanotaan \emph{rekisteröitymättömäksi käyttäjäksi}. Henkilö, jolla on käyttäjätili, on \emph{rekisteröitynyt käyttäjä}. Rekisteröityneellä käyttäjällä voi lisäksi olla oikeus hallinnoida tietokantaa, jolloin käyttäjä on \emph{hallintakäyttäjä}.
 
 \section{Käyttötapaukset}
 
@@ -51,13 +51,146 @@ Kuka tahansa voi rekisteröityä olutpäiväkirjan käyttäjäksi. Henkilöä, j
 \item[Oluen lisääminen] Kirjautunut käyttäjä voi lisätä päiväkirjaansa uuden oluen. Oluesta tallennetaan vähintään sen nimi, mutta myös muita tietoja on mahdollista tallentaa. Panimon voi valita vetovalikosta, tai valita vaihtoehdon ''uusi panimo'' ja antaa uuden panimon nimen. Päiväkirja tallentaa myös päivämäärän ja kellonajan sillä hetkellä kun olut lisätään.
 
 \item[Oluiden selaaminen] Kirjautunut käyttäjä voi selata tallentamiaan oluita ja järjestää olutlistauksen esimerkiksi nimen tai panimon perusteella.
-
 \end{description}
 
-\section{Tietokantakaavio}
+\subsection*{Hallintakäyttäjän käyttötapaukset}
+
+\begin{description}
+\item[Oluiden muokkaus] Hallintakäyttäjä voi sekä lisätä että poistaa tietokannasta oluita. Hän voi myös muokata oluiden nimiä, panimoita sekä oluttyylejä.
+
+\item[Panimoiden muokkaus] Hallintakäyttäjä voi lisätä ja poistaa panimoita, sekä muokata niiden nimiä.
+\end{description}
+
+\section{Järjestelmän tietosisältö}
 
 \begin{figure}[H]
   \centering
   \includegraphics{img/tietokantakaavio.eps}
+  \caption{Järjestelmän käsitekaavio}
 \end{figure}
+
+Järjestelmän tietosisältö koostuu seuraavista kohteista:
+
+\begin{itemize}
+\item \textbf{Käyttäjä (users)}
+
+\[
+  \begin{tabular}{|p{3cm}|p{3cm}|p{7cm}|}\hline
+   \textbf{Attribuutti} & \textbf{Tietotyyppi} & \textbf{Kuvailu} \\ \hline
+    id & kokonaisluku & käyttäjänumero, jonka perusteella järjestelmä yksilöi käyttäjät \\ \hline
+    username & merkkijono & käyttäjänimi, jota käytetään järjestelmään kirjauduttaessa \\ \hline
+    password & merkkijono & salasana, jolla järjestelmään kirjaudutaan, tallennettuna hajautettuna md5 -algoritmillä\\ \hline
+    admin & totuusarvo & totuusarvo, joka kertoo, onko käyttäjällä hallintokäyttäjän oikeudet\\ \hline
+  \end{tabular}
+\]
+
+Käyttäjän rekisteröityessä olutpäiväkirjan käyttäjäksi pyydetään häneltä salasana ja käyttäjänimi. Nämä tallennetaan tietokantaan ja käyttäjälle luodaan yksilöllinen käyttäjänumero. Oletusarvoisesti admin -arvo asetetaan epätodeksi.
+
+\item \textbf{Panimo (breweries)}
+
+\[
+  \begin{tabular}{|p{3cm}|p{3cm}|p{7cm}|}\hline
+   \textbf{Attribuutti} & \textbf{Tietotyyppi} & \textbf{Kuvailu} \\ \hline
+    id & kokonaisluku & numero, jonka perusteella järjestelmä yksilöi panimot \\ \hline
+    name & merkkijono & panimon nimi, joka näkyy käyttäjille \\ \hline
+  \end{tabular}
+\]
+
+Mikäli käyttäjä lisää oluen, jonka panimoa ei vielä löydy tietokannasta, tallennetaan käyttäjän antama panimon nimi tietokantaan.
+
+\item \textbf{Oluttyyli (styles)}
+
+\[
+  \begin{tabular}{|p{3cm}|p{3cm}|p{7cm}|}\hline
+   \textbf{Attribuutti} & \textbf{Tietotyyppi} & \textbf{Kuvailu} \\ \hline
+    id & kokonaisluku & numero, jonka perusteella järjestelmä yksilöi panimot \\ \hline
+    name & merkkijono & panimon nimi, joka näkyy käyttäjille \\ \hline
+  \end{tabular}
+\]
+
+Jokaiseen olueen voi liittyä jokin oluttyyli esimerkiksi ''vaalea lager'', ''porter'', ''erikoisuus'' jne. Käyttäjät eivät voi lisätä näitä, vaan ne ovat järjestelmässä sisäänrakennettuina.
+
+\item \textbf{Olut (beers)}
+
+\[
+  \begin{tabular}{|p{3cm}|p{3cm}|p{7cm}|}\hline
+   \textbf{Attribuutti} & \textbf{Tietotyyppi} & \textbf{Kuvailu} \\ \hline
+    id & kokonaisluku & numero, jonka perusteella järjestelmä yksilöi oluet \\ \hline
+    name & merkkijono & oluen nimi, joka näkyy käyttäjille \\ \hline
+    brewery & kokonaisluku & oluen pannut panimo, viittaa breweries-kohteeseen \\ \hline
+    styles & kokonaisluku & oluttyyli, viittaa styles-kohteeseen \\ \hline
+  \end{tabular}
+\]
+
+Jokainen beers-kohde vastaa jotakin olutmerkkiä. Kullakin panimolla voi olla vain yksi kutakin nimeä kantava olut.
+
+\item \textbf{Maisto (tastings)}
+
+  \[
+  \begin{tabular}{|p{3cm}|p{3cm}|p{7cm}|}\hline
+    \textbf{Attribuutti} & \textbf{Tietotyyppi} & \textbf{Kuvailu} \\ \hline
+    t\_user & kokonaisluku & sen käyttäjän käyttäjänumero, jonka maistelu on kyseessä \\ \hline
+    t\_beer & kokonaisluku & olut, jota on maisteltu \\ \hline
+    t\_time & aikaleima & maistelun lisäyksen ajankohta \\ \hline
+    comment & merkkijono & käyttäjän oluelle lisäämä kommentti \\ \hline
+  \end{tabular}
+  \]
+
+Kun käyttäjä merkitsee maistaneensa jotakin olutta, lisätään tästä tastings-kohde. Jokainen tastings-kohde liittää siis yhteen jonkin käyttäjän sekä jonkin oluen. Myös lisäysajankohta tallennetaan ja käyttäjä voi halutessaan kirjoittaa oluesta kommentin.
+
+\end{itemize}
+\section{Tietokantakaavio}
+
+\begin{verbatim}
+CREATE TABLE users
+(
+id serial PRIMARY KEY NOT NULL,
+username text NOT NULL UNIQUE,
+password text NOT NULL,
+admin boolean NOT NULL
+);
+
+CREATE TABLE breweries
+(
+id SERIAL PRIMARY KEY NOT NULL,
+name text NOT NULL UNIQUE
+);
+
+CREATE TABLE styles
+(
+id SERIAL PRIMARY KEY NOT NULL,
+name text UNIQUE NOT NULL
+);
+
+CREATE TABLE beers
+(
+id SERIAL PRIMARY KEY NOT NULL,
+name text NOT NULL,
+brewery INTEGER REFERENCES breweries(id),
+style INTEGER REFERENCES styles(id),
+UNIQUE (name,brewery)
+);
+
+CREATE TABLE tastings
+(
+t_user INTEGER REFERENCES users(id) NOT NULL,
+t_beer INTEGER REFERENCES beers(id) NOT NULL,
+t_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+comment TEXT,
+UNIQUE (t_user,t_beer)
+);
+\end{verbatim}
+
+\section{Käyttöliittymän hahmotelma}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{img/kayttoliittyma.eps}
+  \caption{Käyttöliittymän hahmotelma}
+\end{figure}
+
+Olutpäiväkirjan aloitussivulla käyttäjä voi syöttää käyttäjänimensä ja salasanansa, jolloin hänet ohjataan käyttäjäsivulle. Käyttäjäsivulla on mahdollisuus lisätä ja poistaa maistamiaan oluita, sekä selata jo maistettuja oluita. Hallintakäyttäjän käyttäjäsivulta on linkki hallintasivulle, jolla pystyy muokkaamaan järjestelmän panimoita ja oluita.
+
+Rekisteröitymätön käyttäjä pääsee aloitussivulta rekisteröitymissivulle.
+
 \end{document}

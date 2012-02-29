@@ -15,7 +15,7 @@ if ($_POST['add_beer']){
   // Lisätään olut tietokantaan, jos sitä ei ennestään ole
 
   if ($beer_id > 0){
-    $result = pg_query($connection, 'SELECT * FROM beers WHERE id = '.pg_escape_string($beer_id));
+    $result = pg_query($connection, 'SELECT * FROM beers WHERE id = '.$beer_id);
     if (!pg_fetch_row($result)){
       $error = 'Virheellinen beer_id.';
     }
@@ -142,7 +142,15 @@ if ($message)
       <input type="submit" value="Lis&auml;&auml; olut">
     </form>
 
-    <h2>Oluesi</h2>
+    <h2>Oluesi<?php
+$result = pg_query($connection, 'SELECT COUNT(*) FROM tastings LEFT JOIN beers ON tastings.t_beer = beers.id WHERE tastings.t_user = \''.pg_escape_string($login_id).'\'');
+$row = pg_fetch_array($result);
+echo(' (Oluita: '.$row[0].', Panimoita: ');
+$result = pg_query($connection, 'SELECT COUNT(DISTINCT breweries) FROM breweries INNER JOIN beers ON beers.brewery = breweries.id INNER JOIN tastings ON beers.id = tastings.t_beer WHERE tastings.t_user = \''.pg_escape_string($login_id).'\'');
+$row = pg_fetch_array($result);
+
+echo($row[0].')');
+?></h2>
     <table border=1>
       <tr>
 	<th><a href="user_home.php?order_by=beer"> Olut</a></th>
@@ -154,9 +162,9 @@ if ($message)
       </tr>
 <?php
 
-$order_by = 'breweries.name';
-if ($_GET['order_by'] == 'beer')
-  $order_by = 'beers.name';
+$order_by = 'beers.name';
+if ($_GET['order_by'] == 'brewery')
+  $order_by = 'breweries.name';
 if ($_GET['order_by'] == 'style')
   $order_by = 'styles.name';
 
@@ -165,7 +173,7 @@ $result = pg_query($connection,
    INNER JOIN beers ON tastings.t_beer = beers.id
    LEFT JOIN breweries ON beers.brewery = breweries.id
    LEFT JOIN styles ON beers.style = styles.id
-   WHERE users.id = \''.pg_escape_string($login_id).'\' ORDER BY '.$order_by.' ASC');
+   WHERE users.id = \''.pg_escape_string($login_id).'\' ORDER BY '.$order_by.', beers.name ASC');
 while ($row = pg_fetch_row($result)){
    echo('<tr><td>'.$row[1].'</td><td>'.$row[3].'</td><td>'.$row[4].'</td><td>'.$row[2].'</td>
 <td><a href="user_edit_comment.php?beer='.$row[0].'">Muokkaa</a></td>

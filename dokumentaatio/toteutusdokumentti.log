@@ -1,8 +1,8 @@
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.31)  29 FEB 2012 15:49
 entering extended mode
  %&-line parsing enabled.
-**suunnitteludokumentti.tex
-(./suunnitteludokumentti.tex
+**toteutusdokumentti.tex
+(./toteutusdokumentti.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, finnish, loaded.
@@ -306,9 +306,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box26
 \@float@everytoks=\toks19
 \@floatcapt=\box27
-)
-(./suunnitteludokumentti.aux)
-\openout1 = `suunnitteludokumentti.aux'.
+) (./toteutusdokumentti.aux)
+\openout1 = `toteutusdokumentti.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -322,7 +321,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
 -------------------- Geometry parameters
@@ -381,79 +379,41 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 14.
-File: img/sidosryhmakaavio.eps Graphic file (type mps)
- [MP to PDF] (./img/sidosryhmakaavio.eps) [1
+File: img/rakennekaavio.eps Graphic file (type mps)
+ [MP to PDF] (./img/rakennekaavio.eps) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-\OT1/cmr/m/n/12 k[]aytt[]aj[]aksi luo-mal-la it-sel-leen k[]aytt[]aj[]atilin. K
-[]aytt[]aj[]a va-lit-see it-sel-leen
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+[]\OT1/cmr/m/n/12 Rekister[]oitymissivulla on kent[]at, joi-hin
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 49--50
-\OT1/cmr/m/n/12 k[]aytt[]aj[]atunnuksen ja sa-la-sa-nan, joil-la h[]an p[]a[]as
-ee kir-jau-tu-maan ja t[]aten
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[]\OT1/cmr/m/n/12 K[]aytt[]aj[]asivu on j[]arjestelm[]a[]an kir-jau-tu-neen
  []
 
 [2]
-File: img/tietokantakaavio.eps Graphic file (type mps)
- [MP to PDF] (./img/tietokantakaavio.eps)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
-
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 77.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 77.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 77.
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-[]\OT1/cmr/m/n/12 k[]aytt[]aj[]anumero, jon-ka pe-rus-teel-la
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]\OT1/cmr/m/n/12 Hallintasivu au-ke-aa vain kir-jau-tu-neel-le
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-[]\OT1/cmr/m/n/12 k[]aytt[]aj[]animi, jo-ta k[]aytet[]a[]an
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--83
-[]\OT1/cmr/m/n/12 totuusarvo, jo-ka ker-too, on-ko
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-[]\OT1/cmr/m/n/12 oluen pan-nut pa-ni-mo, viit-taa
- []
-
-[4]
-File: img/kayttoliittyma.eps Graphic file (type mps)
- [MP to PDF] (./img/kayttoliittyma.eps) [5] [6] (./suunnitteludokumentti.aux) )
- 
+[3] (./toteutusdokumentti.aux) ) 
 Here is how much of TeX's memory you used:
- 1979 strings out of 495046
- 24754 string characters out of 1181965
- 87091 words of memory out of 3000000
- 5149 multiletter control sequences out of 15000+50000
- 11480 words of font info for 35 fonts, out of 3000000 for 9000
+ 1942 strings out of 495046
+ 24073 string characters out of 1181965
+ 84088 words of memory out of 3000000
+ 5129 multiletter control sequences out of 15000+50000
+ 8526 words of font info for 25 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,9n,24p,471b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmr8a.pfb>
-Output written on suunnitteludokumentti.pdf (6 pages, 100567 bytes).
+ 25i,6n,24p,644b,394s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/
+8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fo
+nts/type1/urw/times/utmr8a.pfb>
+Output written on toteutusdokumentti.pdf (3 pages, 63605 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

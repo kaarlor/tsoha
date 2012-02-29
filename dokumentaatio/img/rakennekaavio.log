@@ -1,6 +1,6 @@
 This is MetaPost, version 1.208 (kpathsea version 5.0.0) (mem=mpost 2011.06.28)  29 FEB 2012 15:49
-**sidosryhmakaavio.mp
-(./sidosryhmakaavio.mp (/usr/share/texmf-texlive/metapost/metauml/metauml.mp
+**rakennekaavio.mp
+(./rakennekaavio.mp (/usr/share/texmf-texlive/metapost/metauml/metauml.mp
 (/usr/share/texmf-texlive/metapost/base/boxes.mp)
 (/usr/share/texmf-texlive/metapost/metauml/util_infrastructure.mp
 (/usr/share/texmf-texlive/metapost/metauml/util_log.mp))
@@ -77,6 +77,5 @@ This is MetaPost, version 1.208 (kpathsea version 5.0.0) (mem=mpost 2011.06.28) 
 (/usr/share/texmf-texlive/metapost/metauml/util_log.mp))
 (/usr/share/texmf-texlive/metapost/metauml/metauml_templates.mp
 (/usr/share/texmf-texlive/metapost/metauml/metauml_defaults.mp)
-(/usr/share/texmf-texlive/metapost/metauml/util_log.mp)))
-(/usr/share/texmf-texlive/metapost/base/TEX.mp) [1] )
-1 output file written: sidosryhmakaavio.1
+(/usr/share/texmf-texlive/metapost/metauml/util_log.mp))) [1] )
+1 output file written: rakennekaavio.1

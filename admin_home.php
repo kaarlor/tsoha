@@ -44,17 +44,14 @@ if ($message)
       	<table border="1">
 	  <tr><th>Panimo</th><th>Olut</th><th>Olutlaji</th><th>Poista olut</th><th>Muokkaa</th><th>Maistaneita</th></tr>
 <?php
-  $result = pg_query($connection, 'SELECT beers.id, beers.name, breweries.name, styles.name
+  $result = pg_query($connection, 'SELECT beers.id, beers.name, breweries.name, styles.name, count(tastings)
                                    FROM beers LEFT JOIN breweries ON beers.brewery = breweries.id
 				   LEFT JOIN styles ON beers.style = styles.id
+				   LEFT JOIN tastings ON t_beer = beers.id
+				   GROUP BY beers.id, beers.name, breweries.name, styles.name
                                    ORDER BY breweries.name ASC');
   while ($row = pg_fetch_row($result)){
-    echo('<tr><td>'.$row[2].'</td><td>'.$row[1].'</td><td>'.$row[3].'</td><td><input type="checkbox" name="remove_'.$row[0].'"></td><td><a href="admin_beer.php?beer_id='.$row[0].'">Muokkaa</a></td><td>');
-
-    $beer_row = pg_fetch_row(pg_query($connection, 'SELECT count(*) FROM tastings WHERE t_beer = \''.$row[0].'\''));
-    echo($beer_row[0]);
-
-    echo('</td></tr>'."\n");
+    echo('<tr><td>'.$row[2].'</td><td>'.$row[1].'</td><td>'.$row[3].'</td><td><input type="checkbox" name="remove_'.$row[0].'"></td><td><a href="admin_beer.php?beer_id='.$row[0].'">Muokkaa</a></td><td>'.$row[4].'</td></tr>'."\n");
   }
 ?>
 	 </table>
